@@ -25,3 +25,5 @@ Research how to interact with external DB for high scores
 Create an in game high score leaderboard
 
 If player falls off edge in game mode, lose 1 life, spawn back at start. If 3 lives lost, game over.
+
+If the user stands on a "Start Area" plane by a buildings entrance, the plane changes colour like a button they stand on, and the info about the building appears on screen
