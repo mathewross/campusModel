@@ -1,6 +1,7 @@
 ﻿public static class SavedSettings
 {
     private static double startX, startY, startZ, points;
+    private static double newX, newY, newZ;
     private static int runSpeed;
 
     public static int RunSpeed
@@ -48,6 +49,42 @@
         set
         {
             startZ = value;
+        }
+    }
+
+    public static double NewX
+    {
+        get
+        {
+            return newX;
+        }
+        set
+        {
+            newX = value;
+        }
+    }
+
+    public static double NewY
+    {
+        get
+        {
+            return newY;
+        }
+        set
+        {
+            newY = value;
+        }
+    }
+
+    public static double NewZ
+    {
+        get
+        {
+            return newZ;
+        }
+        set
+        {
+            newZ = value;
         }
     }
 

@@ -22,12 +22,17 @@ public class UserMovement : MonoBehaviour
     public bool isJumping;
     private float myAng = 0.0f;
     public bool canJump = true;
-
+ 
+    
+    private float startX;
+    private float startY;
+    private float startZ;
     void Start()
     {
-        float startX = (float)SavedSettings.StartX;
-        float startY = (float)SavedSettings.StartY;
-        float startZ = (float)SavedSettings.StartZ;
+        //player = GameObject.FindGameObjectWithTag("Player");
+        startX = (float)SavedSettings.StartX;
+        startY = (float)SavedSettings.StartY;
+        startZ = (float)SavedSettings.StartZ;
         float userRunSpeed = (float)SavedSettings.RunSpeed;
         transform.position = new Vector3(startX, startY, startZ);
         runSpeed = userRunSpeed;
@@ -36,6 +41,14 @@ public class UserMovement : MonoBehaviour
 
     void Update()
     {
+
+        //if the user runs off the edge of the map, reset position, (if this is game mode, lose a life)
+        if(transform.position.y < -50)
+        {
+            transform.position = new Vector3(startX, startY, startZ);
+        }
+
+
         //force controller down slope. Disable jumping
         if (myAng > 50)
         {
@@ -124,5 +137,13 @@ public class UserMovement : MonoBehaviour
     {
 
         myAng = Vector3.Angle(Vector3.up, hit.normal);
+    }
+
+    public void ChangePosition(double x, double y, double z)
+    {
+        float newX = (float)x;
+        float newY = (float)y;
+        float newZ = (float)z;
+        transform.position = new Vector3(newX, newY, newZ);
     }
 }
