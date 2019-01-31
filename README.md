@@ -5,7 +5,7 @@ This will serve as a central location for all files, including specs, designs, m
 
 TO DO:
 
-Add option to select run speed in options of Open World
+DONE - Add option to select run speed in options of Open World
 
 DONE - Make it so where the user selects from the drop down is where they spawn (figure out how to pass info from one scene to another)
 
