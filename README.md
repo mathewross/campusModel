@@ -23,3 +23,5 @@ Create a collectable object
 Research how to interact with external DB for high scores
 
 Create an in game high score leaderboard
+
+If player falls off edge in game mode, lose 1 life, spawn back at start. If 3 lives lost, game over.
