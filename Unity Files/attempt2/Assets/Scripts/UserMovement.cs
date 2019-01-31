@@ -25,7 +25,12 @@ public class UserMovement : MonoBehaviour
 
     void Start()
     {
-
+        float startX = (float)SavedSettings.StartX;
+        float startY = (float)SavedSettings.StartY;
+        float startZ = (float)SavedSettings.StartZ;
+        float userRunSpeed = (float)SavedSettings.RunSpeed;
+        transform.position = new Vector3(startX, startY, startZ);
+        runSpeed = userRunSpeed;
         controller = GetComponent<CharacterController>();
     }
 
