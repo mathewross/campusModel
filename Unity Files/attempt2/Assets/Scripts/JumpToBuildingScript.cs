@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class JumpToBuildingScript : MonoBehaviour
 {
     List<string> names = new List<string>() { "Please Select A Building", "Sherrington Building", "Harold Cohen Library", "Electrical Engineering", "Ashton Building", "George Holt", "Harrison Hughes" };
-    List<double> locationsX = new List<double>() { 93.27, -55.46398, -391.484, -693.6182, -497.38, -359.2, -600.5 };  //Default position [0] set incase no option is somehow picked
-    List<double> locationsY = new List<double>() { 1.5, 1.13, 4.44, 3.01, 1, 1, 1 };
-    List<double> locationsZ = new List<double>() { 115.52, 32.87, -40.179, -48.6, 293.89, 246.7, 630.5 };
+    List<double> locationsX = new List<double>() { 65.92, 305.7, -182, -613.35, -330.1, -127.9, -478.1 };  //Default position [0] set incase no option is somehow picked
+    List<double> locationsY = new List<double>() { 6.12, 0.26, 5.2, 2.94, 0.26, 0.26, 0.26 };
+    List<double> locationsZ = new List<double>() { 115.52, -4.7, -105, -104.1, 383.7, 301.4, 852.1 };
 
     public Dropdown dropdown;
 
