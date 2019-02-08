@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class GuideToBuildingScript : MonoBehaviour
 {
-    List<string> names = new List<string>() { "Please Select A Building", "Sherrington Building", "Harold Cohen Library", "Electrical Engineering", "Ashton Building", "George Holt", "Harrison Hughes" };
-    List<double> locationsX = new List<double>() { 93.27, -55.46398, -391.484, -693.6182, -497.38, -359.2, -600.5 };  //Default position [0] set incase no option is somehow picked
-    List<double> locationsY = new List<double>() { 1.5, 1.13, 4.44, 3.01, 1, 1, 1 };
-    List<double> locationsZ = new List<double>() { 115.52, 32.87, -40.179, -48.6, 293.89, 246.7, 630.5 };
+    List<string> names = new List<string>() { "Please Select A Building", "Sherrington Building", "Harold Cohen Library", "Electrical Engineering", "Ashton Building", "George Holt", "Harrison Hughes", "Brodie Tower", "The Guild", "Student Admin Center", "Central Teaching Hub", "Life Sciences", "Sports Hall", "Abercomby Square", "Sydney Jones Library", "Chadwick Building", "The AJ Pub", "Student Services", "The Clock Tower" };
+    List<double> locationsX = new List<double>() { 65.92, 305.7, -182, -613.35, -330.1, -127.9, -478.1, -43.3, -1339.9, -1339.9, -2260, 61, -3673, -5214, -5647, -3375, -1375.9, -1357.9, -792.8 };  //Default position [0] set incase no option is somehow picked
+    List<double> locationsY = new List<double>() { 6.12, 0.26, 5.2, 2.94, 0.26, 0.26, 0.26, 0.26, 0.26, 0.26, 0.26, -18.45, 0.26, 0.26, 0.26, 0.26, 0.26, 0.26, 0.26 };
+    List<double> locationsZ = new List<double>() { 115.52, -4.7, -105, -104.1, 383.7, 301.4, 852.1, 1461, -333.6, 126, -2704, -2286, -516, -1502, -2667, -1577, -1152, -588.9, 446.4 };
 
     public Dropdown dropdown;
 
@@ -16,12 +16,7 @@ public class GuideToBuildingScript : MonoBehaviour
     private GameObject targetObject;
     public Objective objective;
     public GameObject arrowBG;
-    public GameObject sheringtonPad;
-    public GameObject cohenPad;
-    public GameObject electricalPad;
-    public GameObject ashtonPad;
-    public GameObject gHoltPad;
-    public GameObject hHughesPad;
+
 
 
     public void Dropdown_INdexChanged(int index)
@@ -41,9 +36,9 @@ public class GuideToBuildingScript : MonoBehaviour
                     objective.setTarget(targetObject);
                     break;
                 case 2:
-                    
-                    print("Inside Switch Case 2, Find Game Objejct CohenPad");
-                    objective.setTarget(cohenPad);
+
+                    targetObject = GameObject.Find("SherringtonPad");
+                    objective.setTarget(targetObject);
                     break;
                 case 3:
                     targetObject = GameObject.Find("ElectricalPad");
@@ -59,6 +54,54 @@ public class GuideToBuildingScript : MonoBehaviour
                     break;
                 case 6:
                     targetObject = GameObject.Find("HHughesPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 7:
+                    targetObject = GameObject.Find("BrodieTowerPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 8:
+                    targetObject = GameObject.Find("GuildPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 9:
+                    targetObject = GameObject.Find("AdminCenterPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 10:
+                    targetObject = GameObject.Find("CentralTeachingPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 11:
+                    targetObject = GameObject.Find("LifeSciencesPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 12:
+                    targetObject = GameObject.Find("SportsHallPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 13:
+                    targetObject = GameObject.Find("AberycombyPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 14:
+                    targetObject = GameObject.Find("SydneyJonesPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 15:
+                    targetObject = GameObject.Find("ChadwickPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 16:
+                    targetObject = GameObject.Find("AJPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 17:
+                    targetObject = GameObject.Find("StudentServicesPad");
+                    objective.setTarget(targetObject);
+                    break;
+                case 18:
+                    targetObject = GameObject.Find("ClockTowerPad");
                     objective.setTarget(targetObject);
                     break;
             }

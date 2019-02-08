@@ -1,0 +1,1030 @@
+fileFormatVersion: 2
+guid: 15d2920ee44520e44918e1fc06ab0195
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000c8000000c9000000ca000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000d9000000da000000db000000dc000000dd000000de000000df000000e0000000e1000000e2000000e3000000e4000000e5000000e6000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 0f9af2233800dd23852aa88873f952a4
+  longitude: -74.8867638565289
+  latitude: 42.42323995061437
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -728.9848, y: 582.87714, z: -1.0625207}
+      lookAt: {x: 1551.679, y: -525.2467, z: 373.5956}
+      up: {x: 0.42661095, y: 0.90171593, z: 0.070081905}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: AND ELECTRONICS
+    100002: Electrical Engin
+    100004: ELECTRICAL ENGIN#1
+    100006: Faculty of Medic
+    100008: HAROLD COHEN LIB
+    100010: 'HARRISON HUGHES '
+    100012: I
+    100014: I 1
+    100016: I 10
+    100018: I 11
+    100020: I 12
+    100022: I 13
+    100024: I 14
+    100026: I 15
+    100028: I 16
+    100030: I 17
+    100032: I 18
+    100034: I 19
+    100036: I 2
+    100038: I 20
+    100040: I 21
+    100042: I 22
+    100044: I 23
+    100046: I 24
+    100048: I 25
+    100050: I 26
+    100052: I 27
+    100054: I 28
+    100056: I 29
+    100058: I 3
+    100060: I 30
+    100062: I 31
+    100064: I 32
+    100066: I 33
+    100068: I 34
+    100070: I 35
+    100072: I 36
+    100074: I 37
+    100076: I 38
+    100078: I 39
+    100080: I 4
+    100082: I 40
+    100084: I 41
+    100086: I 42
+    100088: I 43
+    100090: I 44
+    100092: I 45
+    100094: I 46
+    100096: I 47
+    100098: I 48
+    100100: I 49
+    100102: I 5
+    100104: I 50
+    100106: I 51
+    100108: I 52
+    100110: I 53
+    100112: I 54
+    100114: I 55
+    100116: I 56
+    100118: I 57
+    100120: I 58
+    100122: I 59
+    100124: I 6
+    100126: I 7
+    100128: I 8
+    100130: I 9
+    100132: Image 2
+    100134: Image 3
+    100136: Image 4
+    100138: LIVERPOOL
+    100140: LIVERPOOL#1
+    100142: LIVERPOOL#2
+    100144: LIVERPOOL#3
+    100146: LIVERPOOL#5
+    100148: //RootNode
+    100150: 'The Sherrington '
+    100152: UNIVERSITY OF
+    100154: UNIVERSITY OF#1
+    100156: UNIVERSITY OF#2
+    100158: UNIVERSITY OF#3
+    100160: UNIVERSITY OF#5
+    100162: V
+    100164: V 1
+    100166: V 10
+    100168: V 11
+    100170: V 12
+    100172: V 13
+    100174: V 14
+    100176: V 15
+    100178: V 16
+    100180: V 17
+    100182: V 18
+    100184: V 19
+    100186: V 2
+    100188: V 3
+    100190: V 4
+    100192: V 5
+    100194: V 6
+    100196: V 7
+    100198: V 8
+    100200: V 9
+    100202: X
+    100204: X 1
+    100206: X 10
+    100208: X 11
+    100210: X 2
+    100212: X 3
+    100214: X 4
+    100216: X 5
+    100218: X 6
+    100220: X 7
+    100222: X 8
+    100224: X 9
+    100226: XII
+    100228: XII 1
+    100230: XII 2
+    100232: XII 3
+    400000: AND ELECTRONICS
+    400002: Electrical Engin
+    400004: ELECTRICAL ENGIN#1
+    400006: Faculty of Medic
+    400008: HAROLD COHEN LIB
+    400010: 'HARRISON HUGHES '
+    400012: I
+    400014: I 1
+    400016: I 10
+    400018: I 11
+    400020: I 12
+    400022: I 13
+    400024: I 14
+    400026: I 15
+    400028: I 16
+    400030: I 17
+    400032: I 18
+    400034: I 19
+    400036: I 2
+    400038: I 20
+    400040: I 21
+    400042: I 22
+    400044: I 23
+    400046: I 24
+    400048: I 25
+    400050: I 26
+    400052: I 27
+    400054: I 28
+    400056: I 29
+    400058: I 3
+    400060: I 30
+    400062: I 31
+    400064: I 32
+    400066: I 33
+    400068: I 34
+    400070: I 35
+    400072: I 36
+    400074: I 37
+    400076: I 38
+    400078: I 39
+    400080: I 4
+    400082: I 40
+    400084: I 41
+    400086: I 42
+    400088: I 43
+    400090: I 44
+    400092: I 45
+    400094: I 46
+    400096: I 47
+    400098: I 48
+    400100: I 49
+    400102: I 5
+    400104: I 50
+    400106: I 51
+    400108: I 52
+    400110: I 53
+    400112: I 54
+    400114: I 55
+    400116: I 56
+    400118: I 57
+    400120: I 58
+    400122: I 59
+    400124: I 6
+    400126: I 7
+    400128: I 8
+    400130: I 9
+    400132: Image 2
+    400134: Image 3
+    400136: Image 4
+    400138: LIVERPOOL
+    400140: LIVERPOOL#1
+    400142: LIVERPOOL#2
+    400144: LIVERPOOL#3
+    400146: LIVERPOOL#5
+    400148: //RootNode
+    400150: 'The Sherrington '
+    400152: UNIVERSITY OF
+    400154: UNIVERSITY OF#1
+    400156: UNIVERSITY OF#2
+    400158: UNIVERSITY OF#3
+    400160: UNIVERSITY OF#5
+    400162: V
+    400164: V 1
+    400166: V 10
+    400168: V 11
+    400170: V 12
+    400172: V 13
+    400174: V 14
+    400176: V 15
+    400178: V 16
+    400180: V 17
+    400182: V 18
+    400184: V 19
+    400186: V 2
+    400188: V 3
+    400190: V 4
+    400192: V 5
+    400194: V 6
+    400196: V 7
+    400198: V 8
+    400200: V 9
+    400202: X
+    400204: X 1
+    400206: X 10
+    400208: X 11
+    400210: X 2
+    400212: X 3
+    400214: X 4
+    400216: X 5
+    400218: X 6
+    400220: X 7
+    400222: X 8
+    400224: X 9
+    400226: XII
+    400228: XII 1
+    400230: XII 2
+    400232: XII 3
+    2100000: _defaultMat
+    2100002: '[Color M06]'
+    2100004: '[Color M00]'
+    2100006: '[Color D01]'
+    2100008: '[Translucent Glass Gray]'
+    2100010: '[Terrazzo Light Blue]'
+    2100012: '[Formica Beige]'
+    2100014: '[Color M01]'
+    2100016: '[Color M04]'
+    2100018: '[Quartz Light Brown]'
+    2100020: '[Translucent Glass Blue]'
+    2100022: '[Color M09]'
+    2100024: '[Tile Various Tan]'
+    2100026: _1
+    2100028: '[Cladding Stucco White]'
+    2100030: '[Color M05]'
+    2100032: '[Color D04]'
+    2100034: '[Formica Laminate Dark]'
+    2100036: '[Formica Blue]'
+    2100038: '[Color B08]'
+    2100040: '[Blacktop New]'
+    2100042: '[Pavers with Grass Herringbone]'
+    2100044: '[Grass Dark Green]'
+    2100046: '[Blinds Cellular White]'
+    2100048: '[Brick Antique 01]'
+    2100050: '[0133_Gray]'
+    2100052: '[Color L16]'
+    2100054: _2
+    2100056: '[Blacktop Old 01]'
+    2100058: '[Blacktop Old 02]'
+    2100060: '[Cladding Siding White]'
+    2100062: '[Color H02]'
+    2100064: '[Color L11]'
+    2100066: '[Color H01]'
+    2100068: '[Color B01]'
+    2100070: '[Color B04]'
+    2100072: '[Color I03]'
+    2100074: '[Color A07]'
+    2100076: '[Color B07]'
+    2100078: _7
+    2100080: _8
+    2100082: '[Color M08]'
+    2100084: _9
+    2100086: '[Color M07]'
+    2100088: '[Color M03]'
+    2100090: '[Color E02]'
+    2100092: _6
+    2100094: _5
+    2100096: _11
+    2100098: '[Color C08]'
+    2100100: _12
+    2100102: '[Mirror 02]'
+    2100104: '[Cinder Block]'
+    2100106: _14
+    2100108: _15
+    2100110: '[Wood Veneer 01]'
+    2100112: '[Translucent Glass Tinted]'
+    2100114: _17
+    2100116: '[Cladding Siding White]1'
+    2100118: '[Color I06]'
+    2100120: '[Brick Tumbled]'
+    2100122: '[Quartz Light Grey]'
+    2100124: '[Brick Rough Tan]'
+    2100126: '[Brick Tumbled]1'
+    2100128: '[Asphalt New]1'
+    2100130: Material 65
+    2100132: Material 66
+    2100134: Material 67
+    2100136: '[Color D05]'
+    2100138: '[Color I05]'
+    2100140: '[Color I07]'
+    2300000: AND ELECTRONICS
+    2300002: Electrical Engin
+    2300004: ELECTRICAL ENGIN#1
+    2300006: Faculty of Medic
+    2300008: HAROLD COHEN LIB
+    2300010: 'HARRISON HUGHES '
+    2300012: I
+    2300014: I 1
+    2300016: I 10
+    2300018: I 11
+    2300020: I 12
+    2300022: I 13
+    2300024: I 14
+    2300026: I 15
+    2300028: I 16
+    2300030: I 17
+    2300032: I 18
+    2300034: I 19
+    2300036: I 2
+    2300038: I 20
+    2300040: I 21
+    2300042: I 22
+    2300044: I 23
+    2300046: I 24
+    2300048: I 25
+    2300050: I 26
+    2300052: I 27
+    2300054: I 28
+    2300056: I 29
+    2300058: I 3
+    2300060: I 30
+    2300062: I 31
+    2300064: I 32
+    2300066: I 33
+    2300068: I 34
+    2300070: I 35
+    2300072: I 36
+    2300074: I 37
+    2300076: I 38
+    2300078: I 39
+    2300080: I 4
+    2300082: I 40
+    2300084: I 41
+    2300086: I 42
+    2300088: I 43
+    2300090: I 44
+    2300092: I 45
+    2300094: I 46
+    2300096: I 47
+    2300098: I 48
+    2300100: I 49
+    2300102: I 5
+    2300104: I 50
+    2300106: I 51
+    2300108: I 52
+    2300110: I 53
+    2300112: I 54
+    2300114: I 55
+    2300116: I 56
+    2300118: I 57
+    2300120: I 58
+    2300122: I 59
+    2300124: I 6
+    2300126: I 7
+    2300128: I 8
+    2300130: I 9
+    2300132: Image 2
+    2300134: Image 3
+    2300136: Image 4
+    2300138: LIVERPOOL
+    2300140: LIVERPOOL#1
+    2300142: LIVERPOOL#2
+    2300144: LIVERPOOL#3
+    2300146: LIVERPOOL#5
+    2300148: //RootNode
+    2300150: 'The Sherrington '
+    2300152: UNIVERSITY OF
+    2300154: UNIVERSITY OF#1
+    2300156: UNIVERSITY OF#2
+    2300158: UNIVERSITY OF#3
+    2300160: UNIVERSITY OF#5
+    2300162: V
+    2300164: V 1
+    2300166: V 10
+    2300168: V 11
+    2300170: V 12
+    2300172: V 13
+    2300174: V 14
+    2300176: V 15
+    2300178: V 16
+    2300180: V 17
+    2300182: V 18
+    2300184: V 19
+    2300186: V 2
+    2300188: V 3
+    2300190: V 4
+    2300192: V 5
+    2300194: V 6
+    2300196: V 7
+    2300198: V 8
+    2300200: V 9
+    2300202: X
+    2300204: X 1
+    2300206: X 10
+    2300208: X 11
+    2300210: X 2
+    2300212: X 3
+    2300214: X 4
+    2300216: X 5
+    2300218: X 6
+    2300220: X 7
+    2300222: X 8
+    2300224: X 9
+    2300226: XII
+    2300228: XII 1
+    2300230: XII 2
+    2300232: XII 3
+    3300000: AND ELECTRONICS
+    3300002: Electrical Engin
+    3300004: ELECTRICAL ENGIN#1
+    3300006: Faculty of Medic
+    3300008: HAROLD COHEN LIB
+    3300010: 'HARRISON HUGHES '
+    3300012: I
+    3300014: I 1
+    3300016: I 10
+    3300018: I 11
+    3300020: I 12
+    3300022: I 13
+    3300024: I 14
+    3300026: I 15
+    3300028: I 16
+    3300030: I 17
+    3300032: I 18
+    3300034: I 19
+    3300036: I 2
+    3300038: I 20
+    3300040: I 21
+    3300042: I 22
+    3300044: I 23
+    3300046: I 24
+    3300048: I 25
+    3300050: I 26
+    3300052: I 27
+    3300054: I 28
+    3300056: I 29
+    3300058: I 3
+    3300060: I 30
+    3300062: I 31
+    3300064: I 32
+    3300066: I 33
+    3300068: I 34
+    3300070: I 35
+    3300072: I 36
+    3300074: I 37
+    3300076: I 38
+    3300078: I 39
+    3300080: I 4
+    3300082: I 40
+    3300084: I 41
+    3300086: I 42
+    3300088: I 43
+    3300090: I 44
+    3300092: I 45
+    3300094: I 46
+    3300096: I 47
+    3300098: I 48
+    3300100: I 49
+    3300102: I 5
+    3300104: I 50
+    3300106: I 51
+    3300108: I 52
+    3300110: I 53
+    3300112: I 54
+    3300114: I 55
+    3300116: I 56
+    3300118: I 57
+    3300120: I 58
+    3300122: I 59
+    3300124: I 6
+    3300126: I 7
+    3300128: I 8
+    3300130: I 9
+    3300132: Image 2
+    3300134: Image 3
+    3300136: Image 4
+    3300138: LIVERPOOL
+    3300140: LIVERPOOL#1
+    3300142: LIVERPOOL#2
+    3300144: LIVERPOOL#3
+    3300146: LIVERPOOL#5
+    3300148: //RootNode
+    3300150: 'The Sherrington '
+    3300152: UNIVERSITY OF
+    3300154: UNIVERSITY OF#1
+    3300156: UNIVERSITY OF#2
+    3300158: UNIVERSITY OF#3
+    3300160: UNIVERSITY OF#5
+    3300162: V
+    3300164: V 1
+    3300166: V 10
+    3300168: V 11
+    3300170: V 12
+    3300172: V 13
+    3300174: V 14
+    3300176: V 15
+    3300178: V 16
+    3300180: V 17
+    3300182: V 18
+    3300184: V 19
+    3300186: V 2
+    3300188: V 3
+    3300190: V 4
+    3300192: V 5
+    3300194: V 6
+    3300196: V 7
+    3300198: V 8
+    3300200: V 9
+    3300202: X
+    3300204: X 1
+    3300206: X 10
+    3300208: X 11
+    3300210: X 2
+    3300212: X 3
+    3300214: X 4
+    3300216: X 5
+    3300218: X 6
+    3300220: X 7
+    3300222: X 8
+    3300224: X 9
+    3300226: XII
+    3300228: XII 1
+    3300230: XII 2
+    3300232: XII 3
+    4300000: Mesh MasterModel2
+    4300002: Mesh MasterModel2
+    4300004: Mesh MasterModel2
+    4300006: Mesh MasterModel2
+    4300008: Mesh UNIVERSITY OF
+    4300010: Mesh HAROLD COHEN LIB
+    4300012: Mesh LIVERPOOL
+    4300014: Mesh Electrical Engin
+    4300016: Mesh UNIVERSITY OF#1
+    4300018: Mesh LIVERPOOL#1
+    4300020: Mesh ELECTRICAL ENGIN#1
+    4300022: Mesh AND ELECTRONICS
+    4300024: Mesh UNIVERSITY OF#2
+    4300026: Mesh LIVERPOOL#2
+    4300028: Mesh Faculty of Medic
+    4300030: 'Mesh The Sherrington '
+    4300032: Mesh UNIVERSITY OF#3
+    4300034: Mesh LIVERPOOL#3
+    4300036: Mesh XII
+    4300038: Mesh I
+    4300040: Mesh V
+    4300042: Mesh X
+    4300044: 'Mesh HARRISON HUGHES '
+    4300046: Mesh LIVERPOOL#5
+    4300048: Mesh UNIVERSITY OF#5
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material 65
+    second: {fileID: 2100000, guid: 59cb0b9e870c5644eba0d521c9c3bf80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material 66
+    second: {fileID: 2100000, guid: b11ded74132aa684e81fe3c20e8c654b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material 67
+    second: {fileID: 2100000, guid: 741b2a28f976b8b4e9e787cb451048d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[0133_Gray]'
+    second: {fileID: 2100000, guid: 929b8c0690006ba479c6a2cc571f1139, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Asphalt New]1'
+    second: {fileID: 2100000, guid: 18532ce57f9c7e44595e4219d4027634, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Blacktop New]'
+    second: {fileID: 2100000, guid: 5593fcd9cfec063498774c1b8b5f64da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Blacktop Old 01]'
+    second: {fileID: 2100000, guid: d6e7e7b3e2ddb6a4d9050eb74e6b97b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Blacktop Old 02]'
+    second: {fileID: 2100000, guid: b8c0ac5d29b0b4441aa7c8ba8db5ccff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Blinds Cellular White]'
+    second: {fileID: 2100000, guid: f8390eca6f102a249abc92e78f9d0fa3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Brick Antique 01]'
+    second: {fileID: 2100000, guid: c7ef3cd38a3eaee469919d2712574748, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Brick Rough Tan]'
+    second: {fileID: 2100000, guid: 86c9c2e6ceafc0546a0c3f912e728695, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Brick Tumbled]'
+    second: {fileID: 2100000, guid: 5201cfa4d4e719144acb6a1863d50fb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Brick Tumbled]1'
+    second: {fileID: 2100000, guid: 3294e0d74e7f268488524f47dc699cba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Cinder Block]'
+    second: {fileID: 2100000, guid: 5da4c13d9be0f8d4b8271a5c93093493, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Cladding Siding White]'
+    second: {fileID: 2100000, guid: c2a8f5926d209f24791685f4ad2a9377, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Cladding Siding White]1'
+    second: {fileID: 2100000, guid: 6ec0ff5f96d9567469d3275d54acb17f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Cladding Stucco White]'
+    second: {fileID: 2100000, guid: 467551f653a2ec34a864f521fdd2d502, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color A07]'
+    second: {fileID: 2100000, guid: 37ccddccac1dd9c4da5b28001b8c29cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color B01]'
+    second: {fileID: 2100000, guid: ee9c93f08adf6bf449515e5735d970fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color B04]'
+    second: {fileID: 2100000, guid: 836946b140c377446acef87b42b66b53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color B07]'
+    second: {fileID: 2100000, guid: 532ce5a9253d707419f83bdcfc661929, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color B08]'
+    second: {fileID: 2100000, guid: 1ea620ddfc31e26428177530eb7652c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color C08]'
+    second: {fileID: 2100000, guid: 622b3e4b4a64506478c24f0d28dee70d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color D01]'
+    second: {fileID: 2100000, guid: da288ff1ae9cc4442957da28064b7e73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color D04]'
+    second: {fileID: 2100000, guid: a4d837434badd4840a0be7fb14e3f9cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color D05]'
+    second: {fileID: 2100000, guid: dc9992ec9c751b94c80ec503c9880ae9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color E02]'
+    second: {fileID: 2100000, guid: a25194182d406aa479a80968f593ea12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color H01]'
+    second: {fileID: 2100000, guid: 7d7a5e3cbd8c6cc4da5862cece199ac1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color H02]'
+    second: {fileID: 2100000, guid: 429ded3081c48f64fb0adf0b90ed5bb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color I03]'
+    second: {fileID: 2100000, guid: 4da17e4576dc8644aa4737c7e4608521, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color I05]'
+    second: {fileID: 2100000, guid: 6893b0508bae1ef4f8beed8bb41e701b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color I06]'
+    second: {fileID: 2100000, guid: ca797ee9228c45b4083cf7c61776ae59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color I07]'
+    second: {fileID: 2100000, guid: 0db1afb53cd419746b5bf640a6f0cd1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color L11]'
+    second: {fileID: 2100000, guid: e98d6d7e3020c0944a964b3ac5688a7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color L16]'
+    second: {fileID: 2100000, guid: 6adb29412e5303642b1758d217d08703, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color M00]'
+    second: {fileID: 2100000, guid: a6bd44d49ce194a4dbad7c7e51781730, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color M01]'
+    second: {fileID: 2100000, guid: 3de14260fd58ff2438995fcc06ae6498, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color M03]'
+    second: {fileID: 2100000, guid: 81505f881016d7f40bc72b8cd817b074, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color M04]'
+    second: {fileID: 2100000, guid: 647ade68aee22ab48ace63f8b3191b35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color M05]'
+    second: {fileID: 2100000, guid: 05493082879bdfb469153c4c0415edd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color M06]'
+    second: {fileID: 2100000, guid: 11bc2725cc816424f97ed044a1649e21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color M07]'
+    second: {fileID: 2100000, guid: 227c7d3ab32881947bce7468f7794047, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color M08]'
+    second: {fileID: 2100000, guid: 2bc52f79c8b50d143bf3ea359df07ba5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color M09]'
+    second: {fileID: 2100000, guid: 2769bdd28bb142841b92d4fb5c9507fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Formica Beige]'
+    second: {fileID: 2100000, guid: 63d09bf5bf233ea4b89864739071665d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Formica Blue]'
+    second: {fileID: 2100000, guid: c561e57a5386d4541ae5970521632a15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Formica Laminate Dark]'
+    second: {fileID: 2100000, guid: 9a34c5295d6422f44aee9ee9477e7773, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Grass Dark Green]'
+    second: {fileID: 2100000, guid: fdaa0921a0fd6c94499fd92b6a4cb31d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Mirror 02]'
+    second: {fileID: 2100000, guid: a69ae4e4782a66d4592bd319eeae96e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Pavers with Grass Herringbone]'
+    second: {fileID: 2100000, guid: 0ba9359dbbec71749ad5df091aa79e21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Quartz Light Brown]'
+    second: {fileID: 2100000, guid: 60097192ffaf66d4493fd1be5d223b59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Quartz Light Grey]'
+    second: {fileID: 2100000, guid: 2f8bb88ab92997e4bae26248599e0324, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Terrazzo Light Blue]'
+    second: {fileID: 2100000, guid: 24ec0809894bdbe44a84697b963e66ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Tile Various Tan]'
+    second: {fileID: 2100000, guid: 7b433977efc60a549aefc2fdf981d803, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Translucent Glass Blue]'
+    second: {fileID: 2100000, guid: 2b5c1dde9f95014499f5b3ccc5539756, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Translucent Glass Gray]'
+    second: {fileID: 2100000, guid: 37bc99277b775134cb1e05e51e9078d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Translucent Glass Tinted]'
+    second: {fileID: 2100000, guid: 9114f86821d2d2b40872cb86bb0a9110, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Wood Veneer 01]'
+    second: {fileID: 2100000, guid: a9cc7f0bcad925640aba41e1a13a6752, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _1
+    second: {fileID: 2100000, guid: 1db74a8bfb4dd104b99f2f145e3bab6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _11
+    second: {fileID: 2100000, guid: 7eb85b7c3709d88458b5d765f8366351, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _12
+    second: {fileID: 2100000, guid: afe289fab53a4524bb72dd5d2e5e6e0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _14
+    second: {fileID: 2100000, guid: e4c6a6d7c4e71584d82b4b07b2342026, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _15
+    second: {fileID: 2100000, guid: 6f6a24f6bfc72d04e905f0053b0e9015, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _17
+    second: {fileID: 2100000, guid: 4d835f1e65fa1c94faf39c909717b8e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _2
+    second: {fileID: 2100000, guid: 4f3e43d4a2f52cb45b4d3877c4640ad0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _5
+    second: {fileID: 2100000, guid: a1afb3488c6570b4c94575e8ec702308, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _6
+    second: {fileID: 2100000, guid: 0e06e661514b2b8429e79b4f8b69f7e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _7
+    second: {fileID: 2100000, guid: 49052608b0ed63443abc632e04823f89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _8
+    second: {fileID: 2100000, guid: 7cab84417e5485e4eaeb97f88111f5c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _9
+    second: {fileID: 2100000, guid: cbd31b23705846448907e482aefb62fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: a00ef4802cabea344ab74a871fd46de1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
