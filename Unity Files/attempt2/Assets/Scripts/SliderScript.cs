@@ -21,16 +21,16 @@ public class SliderScript : MonoBehaviour
         if(mainSlider.value == 0)
         {
             sliderMeshText.text = "Slow";
-            SavedSettings.RunSpeed = 40;
+            SavedSettings.RunSpeed = 80;
         }else if(mainSlider.value == 1)
         {
             sliderMeshText.text = "Medium";
-            SavedSettings.RunSpeed = 80;
+            SavedSettings.RunSpeed = 120;
         }
         else
         {
             sliderMeshText.text = "Fast";
-            SavedSettings.RunSpeed = 120;
+            SavedSettings.RunSpeed = 200;
         }
         
     }

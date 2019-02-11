@@ -12,8 +12,7 @@ public class Objective : MonoBehaviour
     void Start()
     {
         FindObjectOfType<GameScene>().objective = this;
-        FindObjectOfType<SelectStartLocationScript>().objective = this;
-        FindObjectOfType<PlayerNavController>().objective = this;
+        FindObjectOfType<SelectStartLocationScript>().objective = this;        
         FindObjectOfType<GoGuideScript>().objective = this;
     }
 
