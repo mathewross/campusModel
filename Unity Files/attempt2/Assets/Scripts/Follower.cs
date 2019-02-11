@@ -8,7 +8,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class Follower : MonoBehaviour
 {
-
+    public GameScene gameScene;
 	[SerializeField]
 	protected Graph m_Graph;
 	[SerializeField]
@@ -19,9 +19,11 @@ public class Follower : MonoBehaviour
 	protected float m_Speed = 0.01f;
 	protected Path m_Path = new Path ();
 	protected Node m_Current;
+    public TrailRenderer trail;
 
 	void Start ()
 	{
+        trail.enabled = false;
 		m_Path = m_Graph.GetShortestPath ( m_Start, m_End );
 		Follow ( m_Path );
 	}
@@ -32,10 +34,12 @@ public class Follower : MonoBehaviour
 	/// <param name="path">Path.</param>
 	public void Follow ( Path path )
 	{
+        trail.Clear();
 		StopCoroutine ( "FollowPath" );
-		m_Path = path;
+		m_Path = path;        
 		transform.position = m_Path.nodes [ 0 ].transform.position;
-		StartCoroutine ( "FollowPath" );
+        trail.enabled = true;
+        StartCoroutine ( "FollowPath" );
 	}
 
 	/// <summary>
@@ -69,7 +73,18 @@ public class Follower : MonoBehaviour
 		if ( m_Current != null )
 		{
 			transform.position = Vector3.MoveTowards ( transform.position, m_Current.transform.position, m_Speed );
+            
+            
 		}
 	}
+
+    public void enableTrail()
+    {
+        trail.enabled = true;
+    }
 	
+    public void disableTrail()
+    {
+        trail.enabled = false;
+    }
 }

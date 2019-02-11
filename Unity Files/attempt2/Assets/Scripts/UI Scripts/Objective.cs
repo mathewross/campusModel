@@ -6,19 +6,31 @@ public class Objective : MonoBehaviour
 {
 
     private GameObject targetBuilding;
+    private GameObject startingLocation;
 
     // Start is called before the first frame update
     void Start()
     {
         FindObjectOfType<GameScene>().objective = this;
-        FindObjectOfType<GuideToBuildingScript>().objective = this;
+        FindObjectOfType<SelectStartLocationScript>().objective = this;
         FindObjectOfType<PlayerNavController>().objective = this;
+        FindObjectOfType<GoGuideScript>().objective = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //
+    }
+
+    public void setStartingLocation(GameObject target)
+    {
+        startingLocation = target;
+    }
+
+    public GameObject getStartLocation()
+    {
+        return startingLocation;
     }
 
     public void setTarget(GameObject target)
@@ -26,7 +38,7 @@ public class Objective : MonoBehaviour
         targetBuilding = target;
     }
 
-    public GameObject getCurrentTarget()
+    public GameObject getTarget()
     {
         return targetBuilding;
     }

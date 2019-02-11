@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class GoGuideScript : MonoBehaviour
 {
 
-    public UserMovement userMovement;
-    public GameObject arrowBG;
+    //public UserMovement userMovement;
+    //public GameObject arrowBG;
     public GameScene gameScene;
+    public Objective objective;
 
     public void goButton()
     {
-        arrowBG.SetActive(true);
-        gameScene.beginGuidance();
+        //arrowBG.SetActive(true);
+        gameScene.beginGuidance(objective.getStartLocation(), objective.getTarget());
     }
 
 }

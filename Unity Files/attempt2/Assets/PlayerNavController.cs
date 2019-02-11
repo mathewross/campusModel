@@ -10,6 +10,7 @@ public class PlayerNavController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(objective.getCurrentTarget() != null)
         {
             Ray ray = cam.ScreenPointToRay(objective.getCurrentTarget().transform.position);
@@ -21,5 +22,6 @@ public class PlayerNavController : MonoBehaviour
                 agent.SetDestination(hit.point);
             }
         }
+        */
     }
 }
