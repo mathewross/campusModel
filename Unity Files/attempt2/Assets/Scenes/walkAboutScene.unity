@@ -26,19 +26,19 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 5801106c56cab7b428e798b93504f8e9, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 71f14a2d79f732f4d9893ef1b911f4ff, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 16
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.9224762, g: 0.9410733, b: 0.8928891, a: 1}
+  m_IndirectSpecularColor: {r: 0.65818775, g: 0.78299934, b: 0.9250314, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -55,7 +55,7 @@ LightmapSettings:
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 10
-    m_Resolution: 2
+    m_Resolution: 0.1
     m_BakeResolution: 10
     m_AtlasSize: 512
     m_AO: 0
@@ -1917,6 +1917,7 @@ MonoBehaviour:
   - {fileID: 1691435851}
   - {fileID: 1376462777}
   - {fileID: 1012255760}
+  - {fileID: 443889277}
 --- !u!1001 &326514097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4385,6 +4386,7 @@ MonoBehaviour:
   - {fileID: 2044669789}
   - {fileID: 2073688231}
   - {fileID: 975402978}
+  - {fileID: 326514100}
 --- !u!1 &584061611
 GameObject:
   m_ObjectHideFlags: 0
@@ -7318,6 +7320,8 @@ MonoBehaviour:
   - {fileID: 2073688231}
   - {fileID: 1570909572}
   - {fileID: 577507238}
+  - {fileID: 1650342779}
+  - {fileID: 433613665}
 --- !u!1001 &995431544
 PrefabInstance:
   m_ObjectHideFlags: 0
