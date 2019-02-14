@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pad
   - Nodes
+  - diploma
   layers:
   - Default
   - TransparentFX

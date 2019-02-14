@@ -14,22 +14,22 @@ public class CohenHoverPad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        panel.SetActive(true);
-        Debug.Log("Player Entered trigger");
-        material.color = Color.green;
+        //panel.SetActive(true);
+        //Debug.Log("Player Entered trigger");
+        //material.color = Color.green;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Player is within trigger");
-        material.color = Color.green;
-        panel.SetActive(true);
+        //Debug.Log("Player is within trigger");
+        //material.color = Color.green;
+        //panel.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Player Left trigger");
-        panel.SetActive(false);
-        material.color = Color.red;
+        //Debug.Log("Player Left trigger");
+        //panel.SetActive(false);
+        //material.color = Color.red;
     }
 }

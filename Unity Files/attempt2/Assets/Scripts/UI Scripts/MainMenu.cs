@@ -5,9 +5,18 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    public void playGane()
+    public void playOpenWorld()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void playGame()
+    {
+        SavedSettings.StartX = -1115;
+        SavedSettings.StartY = 6;
+        SavedSettings.StartZ = -35;
+        SavedSettings.RunSpeed = 200;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
     public void quitGame()

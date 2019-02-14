@@ -4,6 +4,9 @@ using System.Collections;
 public class UserMovement : MonoBehaviour
 {
 
+    private int totalDiplomas;
+    private int collectedDiplomas;
+
     public float jumpSpeed = 30.0f;
     public float gravity = 55.0f;
     public float runSpeed = 70.0f;
@@ -22,8 +25,11 @@ public class UserMovement : MonoBehaviour
     public bool isJumping;
     private float myAng = 0.0f;
     public bool canJump = true;
- 
-    
+
+    public GameObject panel;
+    public Material material;
+
+
     private float startX;
     private float startY;
     private float startZ;
@@ -145,5 +151,26 @@ public class UserMovement : MonoBehaviour
         float newY = (float)y;
         float newZ = (float)z;
         transform.position = new Vector3(newX, newY, newZ);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pad"))
+        {
+            panel.SetActive(true);
+            other.GetComponent<Renderer>().material.color = Color.green;
+        }else if(other.gameObject.CompareTag("diploma"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pad"))
+        {
+            panel.SetActive(false);
+            other.GetComponent<Renderer>().material.color = Color.red;
+        }
     }
 }
