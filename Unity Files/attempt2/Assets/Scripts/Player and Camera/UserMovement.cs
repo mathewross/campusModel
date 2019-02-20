@@ -72,6 +72,7 @@ public class UserMovement : MonoBehaviour
         {
             diplomas = GameObject.FindGameObjectsWithTag("diploma");
             bool gameOver = true;
+            bool haveSentFinish = false;
             for (int i = 0; i < diplomas.Length; i++)
             {
                 if (diplomas[i].activeSelf == true)
@@ -84,6 +85,7 @@ public class UserMovement : MonoBehaviour
             {
                 canMove = false;
                 timer.finishTimer();
+                return;
             }
         }
 

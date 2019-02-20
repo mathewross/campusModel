@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public void playGame()
     {
+        GameDetailsContainer.LoadedGameDetails = DataAccess.Load();
         SavedSettings.StartX = -1115;
         SavedSettings.StartY = 6;
         SavedSettings.StartZ = -35;
