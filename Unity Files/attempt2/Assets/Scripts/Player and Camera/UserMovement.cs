@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class UserMovement : MonoBehaviour
 {
@@ -28,13 +29,23 @@ public class UserMovement : MonoBehaviour
 
     public GameObject panel;
     public Material material;
-
+    public TextMeshProUGUI buildingText;
+    public gameTimer timer;
 
     private float startX;
     private float startY;
     private float startZ;
+
+    public AudioClip collectObjectSound;
+    public float volume;
+    public AudioSource audio;
+    private GameObject[] diplomas;
+    private bool canMove;
+    
+
     void Start()
     {
+        canMove = true;
         //player = GameObject.FindGameObjectWithTag("Player");
         startX = (float)SavedSettings.StartX;
         startY = (float)SavedSettings.StartY;
@@ -48,95 +59,121 @@ public class UserMovement : MonoBehaviour
     void Update()
     {
 
-        //if the user runs off the edge of the map, reset position, (if this is game mode, lose a life)
+        //if the user runs off the edge of the map, reset position, (if this is game mode, lose a life or add time to total time)
         if(transform.position.y < -50)
         {
             transform.position = new Vector3(startX, startY, startZ);
         }
 
+        float usersRunSpeed = (float)SavedSettings.RunSpeed;
+        runSpeed = usersRunSpeed;
 
-        //force controller down slope. Disable jumping
-        if (myAng > 50)
+        if (SavedSettings.GameMode == true)
         {
-
-            canJump = false;
-        }
-        else
-        {
-
-            canJump = true;
-        }
-
-        if (grounded)
-        {
-
-            isJumping = false;
-
-            if (camera1.transform.gameObject.transform.GetComponent<UserCamera>().inFirstPerson == true)
+            diplomas = GameObject.FindGameObjectsWithTag("diploma");
+            bool gameOver = true;
+            for (int i = 0; i < diplomas.Length; i++)
             {
-                moveDirection = new Vector3((Input.GetMouseButton(0) ? Input.GetAxis("Horizontal") : 0), 0, Input.GetAxis("Vertical"));
-            }
-            moveDirection = new Vector3((Input.GetMouseButton(1) ? Input.GetAxis("Horizontal") : 0), 0, Input.GetAxis("Vertical"));
-
-            moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= isWalking ? walkSpeed : runSpeed;
-
-            moveStatus = "idle";
-
-
-
-            if (moveDirection != Vector3.zero)
-                moveStatus = isWalking ? "walking" : "running";
-
-            if (Input.GetKeyDown(KeyCode.Space) && canJump)
-            {
-                moveDirection.y = jumpSpeed;
-                isJumping = true;
+                if (diplomas[i].activeSelf == true)
+                {
+                    gameOver = false;
+                }
             }
 
+            if (gameOver == true)
+            {
+                canMove = false;
+                timer.finishTimer();
+            }
         }
 
-
-        // Allow turning at anytime. Keep the character facing in the same direction as the Camera if the right mouse button is down.
-
-        if (camera1.transform.gameObject.transform.GetComponent<UserCamera>().inFirstPerson == false)
+        if (canMove == true)
         {
-            if (Input.GetMouseButton(1))
+            //force controller down slope. Disable jumping
+            if (myAng > 50)
             {
-                transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+
+                canJump = false;
             }
             else
             {
-                transform.Rotate(0, Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime, 0);
 
+                canJump = true;
             }
-        }
-        else
-        {
-            if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+
+            //if the user isnt jumping
+            if (grounded)
             {
-                transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+
+                isJumping = false;
+
+                //if the user is in first person camera mode
+                if (camera1.transform.gameObject.transform.GetComponent<UserCamera>().inFirstPerson == true)
+                {
+                    moveDirection = new Vector3((Input.GetMouseButton(0) ? Input.GetAxis("Horizontal") : 0), 0, Input.GetAxis("Vertical"));
+                }
+
+                moveDirection = new Vector3((Input.GetMouseButton(1) ? Input.GetAxis("Horizontal") : 0), 0, Input.GetAxis("Vertical"));
+
+                moveDirection = transform.TransformDirection(moveDirection);
+                moveDirection *= isWalking ? walkSpeed : runSpeed;
+
+                moveStatus = "idle";
+
+
+
+                if (moveDirection != Vector3.zero)
+                    moveStatus = isWalking ? "walking" : "running";
+
+                //jump if user presses space and isnt already jumping (i.e is grounded)
+                if (Input.GetKeyDown(KeyCode.Space) && canJump)
+                {
+                    moveDirection.y = jumpSpeed;
+                    isJumping = true;
+                }
+
             }
 
+
+            // Allow turning at anytime. Keep the character facing in the same direction as the Camera if the right mouse button is down.
+            if (camera1.transform.gameObject.transform.GetComponent<UserCamera>().inFirstPerson == false)
+            {
+                if (Input.GetMouseButton(1))
+                {
+                    transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+                }
+                else
+                {
+                    transform.Rotate(0, Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime, 0);
+
+                }
+            }
+            else
+            {
+                if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+                {
+                    transform.rotation = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
+                }
+
+            }
+
+            //Apply gravity
+            moveDirection.y -= gravity * Time.deltaTime;
+
+
+            //Move controller
+            CollisionFlags flags;
+            if (isJumping)
+            {
+                flags = controller.Move(moveDirection * Time.deltaTime);
+            }
+            else
+            {
+                flags = controller.Move((moveDirection + new Vector3(0, -100, 0)) * Time.deltaTime);
+            }
+
+            grounded = (flags & CollisionFlags.Below) != 0;
         }
-
-        //Apply gravity
-        moveDirection.y -= gravity * Time.deltaTime;
-
-
-        //Move controller
-        CollisionFlags flags;
-        if (isJumping)
-        {
-            flags = controller.Move(moveDirection * Time.deltaTime);
-        }
-        else
-        {
-            flags = controller.Move((moveDirection + new Vector3(0, -100, 0)) * Time.deltaTime);
-        }
-
-        grounded = (flags & CollisionFlags.Below) != 0;
-
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
@@ -145,6 +182,8 @@ public class UserMovement : MonoBehaviour
         myAng = Vector3.Angle(Vector3.up, hit.normal);
     }
 
+
+    //function for changing users position when using jump to building settings
     public void ChangePosition(double x, double y, double z)
     {
         float newX = (float)x;
@@ -153,18 +192,126 @@ public class UserMovement : MonoBehaviour
         transform.position = new Vector3(newX, newY, newZ);
     }
 
+    //function for player interaction with triggers such as info pads and collectables
     private void OnTriggerEnter(Collider other)
     {
+
+        //when walking on a pad, display correct information
         if (other.gameObject.CompareTag("Pad"))
         {
+            
+            switch (other.name)
+            {
+                case "HaroldCohenStartArea":
+                    buildingText.text = "Harold Cohen Library";
+                    break;
+                case "AshtonStartArea":
+                    buildingText.text = "Ashton Building, Department of Computer Science";
+                    break;
+                case "ClockTowerStartArea":
+                    buildingText.text = "Victoria Gallery. 150 Bronwlow Hill";
+                    break;
+                case "GuildStartArea":
+                    buildingText.text = "Liverpool Guild of Students. 160 Mount Pleasant";
+                    break;
+                case "AJStartArea":
+                    buildingText.text = "The Augustus John. Peach Street";
+                    break;
+                case "LifeSciencesStartArea":
+                    buildingText.text = "Life Science Building. Crown Street";
+                    break;
+                case "AdminCenterStartArea":
+                    buildingText.text = "Student Admin Centre. 160 Mount Pleasant";
+                    break;
+                case "CentralTeachingHubStartArea":
+                    buildingText.text = "Central Teaching Hub, Central Teaching Laboratories";
+                    break;
+                case "ChadwickStartArea":
+                    buildingText.text = "Chadwick Building. Peach Street";
+                    break;
+                case "SportsHallStartArea":
+                    buildingText.text = "Sports and Fitness Centre. Bedford Street North";
+                    break;
+                case "AbercombySquareStartArea":
+                    buildingText.text = "Abercomby Square";
+                    break;
+                case "SydneyJonesStartArea":
+                    buildingText.text = "Sydney Jones Library, Chatham Street";
+                    break;
+                case "BrodieTowerStartArea":
+                    buildingText.text = "Brodie Tower. Brownlow Street";
+                    break;
+                case "SherringtonStartArea":
+                    buildingText.text = "Sherrington Building. Ashton Street";
+                    break;
+                case "ElectricalStartArea":
+                    buildingText.text = "Electrical Engineering Building. Department of Electrical Engineering and Electronics";
+                    break;
+                case "GeorgeHoltStartArea":
+                    buildingText.text = "George Holt Building. Computer Science Labs";
+                    break;
+                case "HarrisonHughesStartArea":
+                    buildingText.text = "Harrison Hughes Building. School of Engineering";
+                    break;
+            }          
+
             panel.SetActive(true);
             other.GetComponent<Renderer>().material.color = Color.green;
+
+
+        //if walking over a diploma, disable the objecet so it cant be repeatedly collected
         }else if(other.gameObject.CompareTag("diploma"))
         {
+            audio.PlayOneShot(collectObjectSound, volume);
             other.gameObject.SetActive(false);
+        }else if (other.gameObject.CompareTag("speedboost"))
+        {
+            StartCoroutine(Boost());
+        }else if (other.gameObject.CompareTag("speedslow"))
+        {
+            StartCoroutine(Slow());
         }
     }
 
+    IEnumerator Boost()
+    {
+        
+        float boostTime = 3f;
+        float previousSpeed = runSpeed;
+       
+       SavedSettings.RunSpeed = 600;
+
+        float time = 0;
+        while (time < boostTime)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        SavedSettings.RunSpeed = 200;
+        
+    }
+
+    IEnumerator Slow()
+    {
+
+        float boostTime = 3f;
+        float previousSpeed = runSpeed;
+
+        SavedSettings.RunSpeed = 10;
+
+        float time = 0;
+        while (time < boostTime)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        SavedSettings.RunSpeed = 200;
+
+    }
+
+    //when user leaves the pad, hide the info screen
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Pad"))
@@ -173,4 +320,6 @@ public class UserMovement : MonoBehaviour
             other.GetComponent<Renderer>().material.color = Color.red;
         }
     }
+
+    
 }

@@ -3,6 +3,7 @@
     private static double startX, startY, startZ, points;
     private static double newX, newY, newZ;
     private static int runSpeed;
+    private static bool gameMode;
 
     public static int RunSpeed
     {
@@ -97,6 +98,18 @@
         set
         {
             points = value;
+        }
+    }
+
+    public static bool GameMode
+    {
+        get
+        {
+            return gameMode;
+        }
+        set
+        {
+            gameMode = value;
         }
     }
 }

@@ -24,8 +24,8 @@ public class Follower : MonoBehaviour
 	void Start ()
 	{
         trail.enabled = false;
-		m_Path = m_Graph.GetShortestPath ( m_Start, m_End );
-		Follow ( m_Path );
+		//m_Path = m_Graph.GetShortestPath ( m_Start, m_End );
+		//Follow ( m_Path );
 	}
 
 	/// <summary>
@@ -34,6 +34,7 @@ public class Follower : MonoBehaviour
 	/// <param name="path">Path.</param>
 	public void Follow ( Path path )
 	{
+        //when follow is called, clear the existing trail and set a new path
         trail.Clear();
 		StopCoroutine ( "FollowPath" );
 		m_Path = path;        
@@ -52,6 +53,8 @@ public class Follower : MonoBehaviour
 		UnityEditor.EditorApplication.update += Update;
 		#endif
 		var e = m_Path.nodes.GetEnumerator ();
+
+        //while there is a node to move to
 		while ( e.MoveNext () )
 		{
 			m_Current = e.Current;
@@ -70,6 +73,7 @@ public class Follower : MonoBehaviour
 
 	void Update ()
 	{
+        //if the current node isnt null, move towards intended direction
 		if ( m_Current != null )
 		{
 			transform.position = Vector3.MoveTowards ( transform.position, m_Current.transform.position, m_Speed );
@@ -78,6 +82,7 @@ public class Follower : MonoBehaviour
 		}
 	}
 
+    //enable and disable followers trail
     public void enableTrail()
     {
         trail.enabled = true;

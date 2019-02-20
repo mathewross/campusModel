@@ -14,7 +14,7 @@ public class GoGuideScript : MonoBehaviour
 
     public void goButton()
     {
-        //arrowBG.SetActive(true);
+        //pass the start and end locations to the guidance routine
         gameScene.beginGuidance(objective.getStartLocation(), objective.getTarget());
     }
 
