@@ -41,10 +41,15 @@ public class UserMovement : MonoBehaviour
     public AudioSource audio;
     private GameObject[] diplomas;
     private bool canMove;
-    
+    bool gameOver = true;
+    bool haveSentFinish = false;
 
     void Start()
     {
+        if(SavedSettings.GameMode == true)
+        {
+            diplomas = GameObject.FindGameObjectsWithTag("diploma");
+        }
         canMove = true;
         //player = GameObject.FindGameObjectWithTag("Player");
         startX = (float)SavedSettings.StartX;
@@ -68,27 +73,24 @@ public class UserMovement : MonoBehaviour
         float usersRunSpeed = (float)SavedSettings.RunSpeed;
         runSpeed = usersRunSpeed;
 
+        //if we are in game mode, check if we've yet finished the game (so we dont keep calling finish)
+        //if we haven't and the game is over, finish the game
         if (SavedSettings.GameMode == true)
         {
-            diplomas = GameObject.FindGameObjectsWithTag("diploma");
-            bool gameOver = true;
-            bool haveSentFinish = false;
-            for (int i = 0; i < diplomas.Length; i++)
+            if (haveSentFinish == false)
             {
-                if (diplomas[i].activeSelf == true)
+                if (checkGameOver())
                 {
-                    gameOver = false;
+                    canMove = false;
+                    timer.finishTimer();
+                    haveSentFinish = true;
+                    return;
                 }
-            }
-
-            if (gameOver == true)
-            {
-                canMove = false;
-                timer.finishTimer();
-                return;
             }
         }
 
+
+        //if we can move the player (i.e. the game isn't over or any other blocker)
         if (canMove == true)
         {
             //force controller down slope. Disable jumping
@@ -184,6 +186,22 @@ public class UserMovement : MonoBehaviour
         myAng = Vector3.Angle(Vector3.up, hit.normal);
     }
 
+    private bool checkGameOver()
+    {
+        bool gameOver = true;
+        
+        for (int i = 0; i < diplomas.Length; i++)
+        {
+            if (diplomas[i].activeSelf == true)
+            {
+                gameOver = false;
+                break;
+            }
+
+        }
+
+        return gameOver;
+    }
 
     //function for changing users position when using jump to building settings
     public void ChangePosition(double x, double y, double z)
@@ -272,6 +290,9 @@ public class UserMovement : MonoBehaviour
         }else if (other.gameObject.CompareTag("speedslow"))
         {
             StartCoroutine(Slow());
+        }else if (other.gameObject.CompareTag("patrol"))
+        {
+            transform.position = new Vector3(startX, startY, startZ);
         }
     }
 

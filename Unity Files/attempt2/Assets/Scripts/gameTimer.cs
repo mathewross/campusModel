@@ -17,6 +17,7 @@ public class gameTimer : MonoBehaviour
     public bool gameMode = false;
     private float finishedTime;
     private float playersTime = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +49,7 @@ public class gameTimer : MonoBehaviour
     public void finishTimer()
     {
         finished = true;
+        finishedTime = playersTime;
         timerText.color = Color.red;
         string minutes = ((int)finishedTime / 60).ToString();
         string seconds = (finishedTime % 60).ToString("f1");
@@ -55,22 +57,12 @@ public class gameTimer : MonoBehaviour
         int positionOnBoard = 0;
 
    
-   
-        /*
-         * 
-         * LOGIC BROKEN HERE SOMEWHERE
-         * It is not correctly setting score when a new high score is reached, seconds highest score entered the leaderboard on the 2nd run, and then it set that for all entries in the array
-         * It also keeps calling this method from the update function (may  be a part of the problem ) but my logic broke that, need to work on that
-         * 
-         * 
-         * */
-
         //if there is some saved data (i.e. there have been previous attempts at the game)
         if (GameDetailsContainer.LoadedGameDetails != null)
         {
             for (int i = 0; i < 5; i++)
             {
-                if (finishedTime > GameDetailsContainer.LoadedGameDetails.topScores[i])
+                if (finishedTime < GameDetailsContainer.LoadedGameDetails.topScores[i])
                 {
                     //push the scores down one to make room for new score
                     for (int j = 4; j > i; j--)
@@ -96,11 +88,12 @@ public class gameTimer : MonoBehaviour
             //if there is data to load and the player made it onto the leaderboard
             if (onLeaderBoard == true)
             {
+                gameOverPanel.SetActive(true);
                 //tell the player theyve made it onto the leaderboard
                 gameOverText.text = "You made it onto the leaderboard!\nYour position: " + positionOnBoard + ", with a time of: ;" + minutes + " minutes and " + seconds + " seconds";
 
             }
-            else if (GameDetailsContainer.LoadedGameDetails != null && onLeaderBoard == false)
+            else if (onLeaderBoard == false)
             {
                 gameOverPanel.SetActive(true);
                 gameOverText.text = "You did not make it onto the leaderboard, better luck next time!";
@@ -114,6 +107,8 @@ public class gameTimer : MonoBehaviour
             gameOverPanel.SetActive(true);
             
             gameOverText.text = "No other scores have yet been recorded, you are the leader!\n Your time is: " + minutes + " minutes and " + seconds + " seconds.";
+
+            /* DEBUGGING
             print(gameDetails.topScores.Length);
             print("I am at the end of the game, before the for loop");
             gameDetails.topScores[0] = finishedTime;
@@ -127,6 +122,8 @@ public class gameTimer : MonoBehaviour
             Save(gameDetails);
 
             print("I am at the end of the game, after the save");
+            */
+
             return;
         }
 

@@ -9,6 +9,7 @@ TagManager:
   - diploma
   - speedboost
   - speedslow
+  - patrol
   layers:
   - Default
   - TransparentFX
