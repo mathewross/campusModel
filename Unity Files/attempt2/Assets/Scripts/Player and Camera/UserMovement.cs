@@ -2,6 +2,7 @@
 using System.Collections;
 using TMPro;
 
+
 public class UserMovement : MonoBehaviour
 {
 
@@ -43,9 +44,12 @@ public class UserMovement : MonoBehaviour
     private bool canMove;
     bool gameOver = true;
     bool haveSentFinish = false;
+    public GameObject bigF;
+
 
     void Start()
     {
+
         if(SavedSettings.GameMode == true)
         {
             diplomas = GameObject.FindGameObjectsWithTag("diploma");
@@ -62,10 +66,10 @@ public class UserMovement : MonoBehaviour
     }
 
     void Update()
-    {
+    { 
 
         //if the user runs off the edge of the map, reset position, (if this is game mode, lose a life or add time to total time)
-        if(transform.position.y < -50)
+        if (transform.position.y < -50)
         {
             transform.position = new Vector3(startX, startY, startZ);
         }
@@ -203,6 +207,8 @@ public class UserMovement : MonoBehaviour
         return gameOver;
     }
 
+
+
     //function for changing users position when using jump to building settings
     public void ChangePosition(double x, double y, double z)
     {
@@ -212,10 +218,12 @@ public class UserMovement : MonoBehaviour
         transform.position = new Vector3(newX, newY, newZ);
     }
 
+
+    bool triggered = false;
     //function for player interaction with triggers such as info pads and collectables
     private void OnTriggerEnter(Collider other)
     {
-
+        
         //when walking on a pad, display correct information
         if (other.gameObject.CompareTag("Pad"))
         {
@@ -293,6 +301,20 @@ public class UserMovement : MonoBehaviour
         }else if (other.gameObject.CompareTag("patrol"))
         {
             transform.position = new Vector3(startX, startY, startZ);
+        }else if (other.gameObject.CompareTag("triggerPad"))
+        {
+            
+            float force = 700;
+            if (triggered == false)
+            {
+                bigF.GetComponent<Rigidbody>().isKinematic = false;
+                bigF.GetComponent<Rigidbody>().AddForce(Vector3.left * force);
+                triggered = true;
+            }
+            
+        }else if (other.gameObject.CompareTag("f"))
+        {
+            transform.position = new Vector3(startX, startY, startZ);
         }
     }
 
@@ -344,5 +366,4 @@ public class UserMovement : MonoBehaviour
         }
     }
 
-    
 }

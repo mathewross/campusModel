@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public void playGame()
     {
+        print("Attempting to load data");
         GameDetailsContainer.LoadedGameDetails = DataAccess.Load();
         SavedSettings.StartX = -1115;
         SavedSettings.StartY = 6;

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class DataAccess
+public class DataAccess: MonoBehaviour
 {
     [DllImport("__Internal")]
     private static extern void SyncFiles();
@@ -46,11 +46,14 @@ public class DataAccess
 
     public static GameDetails Load()
     {
+     
         GameDetails gameDetails = null;
         string dataPath = string.Format("{0}/GameDetails.dat", Application.persistentDataPath);
-
+        
         try
         {
+            //File.Delete(dataPath);
+
             if (File.Exists(dataPath))
             {
                 BinaryFormatter binaryFormatter = new BinaryFormatter();

@@ -22,7 +22,7 @@ public class GameScene : MonoBehaviour
     void Start()
     {
         //Find the player transform
-        playerTransform = FindObjectOfType<UserMovement>().transform;
+        //playerTransform = FindObjectOfType<UserMovement>().transform;
         FindObjectOfType<GoGuideScript>().gameScene = this;
         
     }

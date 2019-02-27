@@ -12,6 +12,8 @@ public class gameTimer : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public GameObject gameOverPanel;
     public Text timerText;
+    public GameObject highScoresPanel;
+    public Text highScoresText;
     private float startTime;
     public bool finished = false;
     public bool gameMode = false;
@@ -21,8 +23,23 @@ public class gameTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
         startTime = Time.time;
+
+        if (GameDetailsContainer.LoadedGameDetails != null)
+        {
+
+            highScoresText.text = "High Scores:\n";
+            for(int i = 0; i < 5; i++)
+            {
+                
+                highScoresText.text = highScoresText.text + i + ": " + GameDetailsContainer.LoadedGameDetails.topScores[i].ToString("f1") + "\n";
+            }
+        }
+        else
+        {
+            highScoresText.text = "No high scores yet registered";
+        }
+           
     
     }
 
@@ -62,12 +79,12 @@ public class gameTimer : MonoBehaviour
         {
             for (int i = 0; i < 5; i++)
             {
-                if (finishedTime < GameDetailsContainer.LoadedGameDetails.topScores[i])
+                if (finishedTime < GameDetailsContainer.LoadedGameDetails.topScores[i] || GameDetailsContainer.LoadedGameDetails.topScores[i] == 0)
                 {
                     //push the scores down one to make room for new score
                     for (int j = 4; j > i; j--)
                     {
-                        GameDetailsContainer.LoadedGameDetails.topScores[j - 1] = GameDetailsContainer.LoadedGameDetails.topScores[j];
+                        GameDetailsContainer.LoadedGameDetails.topScores[j] = GameDetailsContainer.LoadedGameDetails.topScores[j-1];
                     }
                     onLeaderBoard = true;
                     positionOnBoard = i + 1;
@@ -82,8 +99,7 @@ public class gameTimer : MonoBehaviour
                 print(GameDetailsContainer.LoadedGameDetails.topScores[j]);
             }
 
-            //save the game to the file
-            Save(GameDetailsContainer.LoadedGameDetails);
+            
 
             //if there is data to load and the player made it onto the leaderboard
             if (onLeaderBoard == true)
@@ -98,6 +114,15 @@ public class gameTimer : MonoBehaviour
                 gameOverPanel.SetActive(true);
                 gameOverText.text = "You did not make it onto the leaderboard, better luck next time!";
             }
+
+            highScoresText.text = "High Scores:\n";
+            for (int i = 0; i < 5; i++)
+            {
+                highScoresText.text = highScoresText.text + i + ": " + GameDetailsContainer.LoadedGameDetails.topScores[i].ToString("f1") + "\n";
+            }
+
+            //save the game to the file
+            Save(GameDetailsContainer.LoadedGameDetails);
         }
         //otherwise, this should be the first run of the game
         else
@@ -108,6 +133,7 @@ public class gameTimer : MonoBehaviour
             
             gameOverText.text = "No other scores have yet been recorded, you are the leader!\n Your time is: " + minutes + " minutes and " + seconds + " seconds.";
 
+            Save(gameDetails);
             /* DEBUGGING
             print(gameDetails.topScores.Length);
             print("I am at the end of the game, before the for loop");
