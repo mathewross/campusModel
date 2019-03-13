@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 
@@ -8,7 +9,8 @@ public class UserMovement : MonoBehaviour
 
     private int totalDiplomas;
     private int collectedDiplomas;
-
+    private bool gamePaused;
+    private bool drunk;
     public float jumpSpeed = 30.0f;
     public float gravity = 55.0f;
     public float runSpeed = 70.0f;
@@ -46,6 +48,10 @@ public class UserMovement : MonoBehaviour
     bool haveSentFinish = false;
     public GameObject bigF;
 
+    public GameObject hitBeerPanel;
+    public Text drunkText;
+    public GameObject blurrPanl;
+    private float tenSec = 10;
 
     void Start()
     {
@@ -63,6 +69,8 @@ public class UserMovement : MonoBehaviour
         transform.position = new Vector3(startX, startY, startZ);
         runSpeed = userRunSpeed;
         controller = GetComponent<CharacterController>();
+        gamePaused = false;
+        drunk = false;
     }
 
     void Update()
@@ -90,6 +98,37 @@ public class UserMovement : MonoBehaviour
                     haveSentFinish = true;
                     return;
                 }
+            }
+
+
+            //the game pauses when the user hits a patrol or mobile phone
+            if(gamePaused == true)
+            {
+                
+                if (Input.GetKeyDown(KeyCode.G))
+                {
+                    gamePaused = false;
+                    resumeGame();
+                    transform.position = new Vector3(startX, startY, startZ);
+                    if(drunk == true)
+                    {
+                        blurrPanl.SetActive(true);
+                    }
+                    
+
+                }
+            }
+            
+            //if they're drunk, the screen is blurred for 10 seconds
+            if(drunk == true)
+            {
+                    tenSec -= Time.smoothDeltaTime;
+                    if (tenSec <= 0)
+                    {
+                        drunk = false;
+                        blurrPanl.SetActive(false);
+                        
+                    }
             }
         }
 
@@ -223,11 +262,11 @@ public class UserMovement : MonoBehaviour
     //function for player interaction with triggers such as info pads and collectables
     private void OnTriggerEnter(Collider other)
     {
-        
+
         //when walking on a pad, display correct information
         if (other.gameObject.CompareTag("Pad"))
         {
-            
+
             switch (other.name)
             {
                 case "HaroldCohenStartArea":
@@ -281,29 +320,41 @@ public class UserMovement : MonoBehaviour
                 case "HarrisonHughesStartArea":
                     buildingText.text = "Harrison Hughes Building. School of Engineering";
                     break;
-            }          
+            }
 
             panel.SetActive(true);
             other.GetComponent<Renderer>().material.color = Color.green;
 
 
-        //if walking over a diploma, disable the objecet so it cant be repeatedly collected
-        }else if(other.gameObject.CompareTag("diploma"))
+            //if walking over a diploma, disable the objecet so it cant be repeatedly collected
+        } else if (other.gameObject.CompareTag("diploma"))
         {
             audio.PlayOneShot(collectObjectSound, volume);
             other.gameObject.SetActive(false);
-        }else if (other.gameObject.CompareTag("speedboost"))
+        } else if (other.gameObject.CompareTag("speedboost"))
         {
             StartCoroutine(Boost());
-        }else if (other.gameObject.CompareTag("speedslow"))
+        } else if (other.gameObject.CompareTag("speedslow"))
         {
             StartCoroutine(Slow());
-        }else if (other.gameObject.CompareTag("patrol"))
-        {
-            transform.position = new Vector3(startX, startY, startZ);
-        }else if (other.gameObject.CompareTag("triggerPad"))
+        } else if (other.gameObject.CompareTag("patrol"))
         {
             
+            hitBeerPanel.SetActive(true);
+            drunkText.text = "Drinking is bad for your education! You're now drunk. Press G to continue from where you started, but this time avoid the beer!";
+            drunk = true;
+            tenSec = 10;
+            pausegame();
+
+
+        } else if (other.gameObject.CompareTag("phone")){
+            hitBeerPanel.SetActive(true);
+            drunkText.text = "Don't let your mobile distract you! Put it down, press G and try again.";
+            pausegame();
+
+        } else if (other.gameObject.CompareTag("triggerPad"))
+        {
+
             float force = 700;
             if (triggered == false)
             {
@@ -311,8 +362,8 @@ public class UserMovement : MonoBehaviour
                 bigF.GetComponent<Rigidbody>().AddForce(Vector3.left * force);
                 triggered = true;
             }
-            
-        }else if (other.gameObject.CompareTag("f"))
+
+        } else if (other.gameObject.CompareTag("f"))
         {
             transform.position = new Vector3(startX, startY, startZ);
         }
@@ -364,6 +415,21 @@ public class UserMovement : MonoBehaviour
             panel.SetActive(false);
             other.GetComponent<Renderer>().material.color = Color.red;
         }
+    }
+
+    private void pausegame()
+    {
+        gamePaused = true;
+        Time.timeScale = 0;
+    }
+
+    private void resumeGame()
+    {
+        
+        hitBeerPanel.SetActive(false);
+        Time.timeScale = 1;
+        gamePaused = false;
+       
     }
 
 }

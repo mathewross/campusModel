@@ -12,6 +12,7 @@ TagManager:
   - patrol
   - f
   - triggerPad
+  - phone
   layers:
   - Default
   - TransparentFX

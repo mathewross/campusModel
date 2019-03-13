@@ -4,6 +4,18 @@
     private static double newX, newY, newZ;
     private static int runSpeed;
     private static bool gameMode;
+    private static string userName;
+    public static string UserName
+    {
+        get
+        {
+            return userName;
+        }
+        set
+        {
+            userName = value;
+        }
+    }
 
     public static int RunSpeed
     {

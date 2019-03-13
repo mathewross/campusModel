@@ -31,8 +31,8 @@ public class gameTimer : MonoBehaviour
             highScoresText.text = "High Scores:\n";
             for(int i = 0; i < 5; i++)
             {
-                
-                highScoresText.text = highScoresText.text + i + ": " + GameDetailsContainer.LoadedGameDetails.topScores[i].ToString("f1") + "\n";
+
+                highScoresText.text = highScoresText.text + i + ": " + GameDetailsContainer.LoadedGameDetails.topScoreNames[i] + " = " + GameDetailsContainer.LoadedGameDetails.topScores[i].ToString("f1") + "\n";
             }
         }
         else
@@ -84,22 +84,17 @@ public class gameTimer : MonoBehaviour
                     //push the scores down one to make room for new score
                     for (int j = 4; j > i; j--)
                     {
-                        GameDetailsContainer.LoadedGameDetails.topScores[j] = GameDetailsContainer.LoadedGameDetails.topScores[j-1];
+                        GameDetailsContainer.LoadedGameDetails.topScoreNames[j] = GameDetailsContainer.LoadedGameDetails.topScoreNames[j - 1];
+                        GameDetailsContainer.LoadedGameDetails.topScores[j] = GameDetailsContainer.LoadedGameDetails.topScores[j - 1];
                     }
                     onLeaderBoard = true;
                     positionOnBoard = i + 1;
+                    GameDetailsContainer.LoadedGameDetails.topScoreNames[i] = SavedSettings.UserName;
                     GameDetailsContainer.LoadedGameDetails.topScores[i] = finishedTime;
                     break;
                 }
             }
 
-            for (int j = 0; j < GameDetailsContainer.LoadedGameDetails.topScores.Length; j++)
-            {
-                
-                print(GameDetailsContainer.LoadedGameDetails.topScores[j]);
-            }
-
-            
 
             //if there is data to load and the player made it onto the leaderboard
             if (onLeaderBoard == true)
@@ -118,7 +113,7 @@ public class gameTimer : MonoBehaviour
             highScoresText.text = "High Scores:\n";
             for (int i = 0; i < 5; i++)
             {
-                highScoresText.text = highScoresText.text + i + ": " + GameDetailsContainer.LoadedGameDetails.topScores[i].ToString("f1") + "\n";
+                highScoresText.text = highScoresText.text + i + ": " + GameDetailsContainer.LoadedGameDetails.topScoreNames[i] + " = " + GameDetailsContainer.LoadedGameDetails.topScores[i].ToString("f1") + "\n";
             }
 
             //save the game to the file
@@ -128,6 +123,7 @@ public class gameTimer : MonoBehaviour
         else
         {
             GameDetails gameDetails = new GameDetails();
+            gameDetails.topScoreNames[0] = SavedSettings.UserName;
             gameDetails.topScores[0] = finishedTime;
             gameOverPanel.SetActive(true);
             
