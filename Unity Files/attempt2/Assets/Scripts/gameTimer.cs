@@ -32,7 +32,7 @@ public class gameTimer : MonoBehaviour
             for(int i = 0; i < 5; i++)
             {
 
-                highScoresText.text = highScoresText.text + i + ": " + GameDetailsContainer.LoadedGameDetails.topScoreNames[i] + " = " + GameDetailsContainer.LoadedGameDetails.topScores[i].ToString("f1") + "\n";
+                highScoresText.text = highScoresText.text + (i+1) + ": " + GameDetailsContainer.LoadedGameDetails.topScoreNames[i] + " = " + GameDetailsContainer.LoadedGameDetails.topScores[i].ToString("f1") + "\n";
             }
         }
         else
@@ -113,7 +113,7 @@ public class gameTimer : MonoBehaviour
             highScoresText.text = "High Scores:\n";
             for (int i = 0; i < 5; i++)
             {
-                highScoresText.text = highScoresText.text + i + ": " + GameDetailsContainer.LoadedGameDetails.topScoreNames[i] + " = " + GameDetailsContainer.LoadedGameDetails.topScores[i].ToString("f1") + "\n";
+                highScoresText.text = highScoresText.text + (i+1) + ": " + GameDetailsContainer.LoadedGameDetails.topScoreNames[i] + " = " + GameDetailsContainer.LoadedGameDetails.topScores[i].ToString("f1") + "\n";
             }
 
             //save the game to the file
