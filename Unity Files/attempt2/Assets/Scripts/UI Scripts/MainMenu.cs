@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
         
         if (userInput.text.ToString() == "")
         {
-            EditorUtility.DisplayDialog("Invalid input", "Nickname cannot be null, please try again", "Ok");
+            //EditorUtility.DisplayDialog("Invalid input", "Nickname cannot be null, please try again", "Ok");
         }
         else
         {
